@@ -13,8 +13,8 @@ composer require bigraja/bulksmsbd
 Add to `.env`:
 
 ```
-BDSMS_API_KEY=your_api_key
-BDSMS_SENDER_ID=your_sender_id
+BULKSMSBD_API_KEY=your_api_key
+BULKSMSBD_SENDER_ID=your_sender_id
 ```
 
 ## Usage
