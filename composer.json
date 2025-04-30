@@ -1,0 +1,27 @@
+{
+    "name": "bigraja/bulkbdsms",
+    "description": "Laravel SMS notification channel for bulksmsbd.net",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bigraja\\BulkBDSms\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^9.0|^10.0|^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bigraja\\BulkBDSms\\BulkBDSmsServiceProvider"
+            ],
+            "aliases": {
+                "BulkBDSms": "Bigraja\\BulkBDSms\\Facades\\BulkBDSms"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
