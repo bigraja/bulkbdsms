@@ -1,13 +1,13 @@
 <?php
 
-namespace Bigraja\BulkBDSms\Facades;
+namespace Bigraja\BulkSmsBD\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class BulkBDSms extends Facade
+class BulkSmsBD extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'bulkbdsms';
+        return 'bulksmsbd';
     }
 }

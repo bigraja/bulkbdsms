@@ -5,7 +5,7 @@ Send SMS via bulksmsbd.net in Laravel using Notification system or Facade.
 ## Installation
 
 ```bash
-composer require bigraja/bulkbdsms
+composer require bigraja/bulksmsbd
 ```
 
 ## Configuration
@@ -20,9 +20,9 @@ BDSMS_SENDER_ID=your_sender_id
 ## Usage
 
 ```php
-use BulkBDSms;
+use BulkSmsBD;
 
-BulkBDSms::send('88017XXXXXXXX', 'Your message');
+BulkSmsBD::send('88017XXXXXXXX', 'Your message');
 ```
 
 ## Notification Channel
@@ -30,10 +30,10 @@ BulkBDSms::send('88017XXXXXXXX', 'Your message');
 ```php
 public function via($notifiable)
 {
-    return [\Bigraja\BulkBDSms\BulkBDSmsChannel::class];
+    return [\Bigraja\BulkSmsBD\BulkSmsBDChannel::class];
 }
 
-public function toBulkBDSms($notifiable)
+public function toBulkSmsBD($notifiable)
 {
     return "Your SMS message";
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bigraja\BulkBDSms\Filament\Resources;
+namespace Bigraja\BulkSmsBD\Filament\Resources;
 
-use Bigraja\BulkBDSms\Models\SmsLog;
+use Bigraja\BulkSmsBD\Models\SmsLog;
 use Filament\Resources\Resource;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Tables\Table;

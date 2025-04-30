@@ -1,19 +1,19 @@
 <?php
 
-namespace Bigraja\BulkBDSms;
+namespace Bigraja\BulkSmsBD;
 
 use Illuminate\Support\Facades\Http;
-use Bigraja\BulkBDSms\Models\SmsLog;
+use Bigraja\BulkSmsBD\Models\SmsLog;
 
-class BulkBDSmsService
+class BulkSmsBDService
 {
     public function send($to, $message)
     {
         $response = Http::get('http://bulksmsbd.net/api/smsapi', [
-            'api_key'  => config('bulkbdsms.api_key'),
+            'api_key'  => config('bulksmsbd.api_key'),
             'type'     => 'text',
             'number'   => $to,
-            'senderid' => config('bulkbdsms.sender_id'),
+            'senderid' => config('bulksmsbd.sender_id'),
             'message'  => $message,
         ]);
 
@@ -30,7 +30,7 @@ class BulkBDSmsService
     public function getBalance()
     {
         $response = Http::get('http://bulksmsbd.net/api/getBalanceApi', [
-            'api_key' => config('bulkbdsms.api_key'),
+            'api_key' => config('bulksmsbd.api_key'),
         ]);
 
         return $response->body();

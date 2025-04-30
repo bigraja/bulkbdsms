@@ -1,6 +1,6 @@
 <?php
 
-namespace Bigraja\BulkBDSms\Models;
+namespace Bigraja\BulkSmsBD\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

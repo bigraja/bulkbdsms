@@ -1,9 +1,9 @@
 <?php
 
-namespace Bigraja\BulkBDSms\Filament\Widgets;
+namespace Bigraja\BulkSmsBD\Filament\Widgets;
 
 use Filament\Widgets\Widget;
-use Bigraja\BulkBDSms\BulkBDSmsService;
+use Bigraja\BulkSmsBD\BulkSmsBDService;
 
 class SmsBalanceWidget extends Widget
 {
@@ -11,7 +11,7 @@ class SmsBalanceWidget extends Widget
 
     public function getViewData(): array
     {
-        $balance = app(BulkBDSmsService::class)->getBalance();
+        $balance = app(BulkSmsBDService::class)->getBalance();
 
         return [
             'balance' => $balance,
