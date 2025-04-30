@@ -4,6 +4,8 @@ namespace Bigraja\BulkSmsBD;
 
 use Illuminate\Support\Facades\Http;
 use Bigraja\BulkSmsBD\Models\SmsLog;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class BulkSmsBDService
 {
@@ -27,12 +29,29 @@ class BulkSmsBDService
         return $response->body();
     }
 
-    public function getBalance()
+    public function getBalance(): int
     {
-        $response = Http::get('http://bulksmsbd.net/api/getBalanceApi', [
-            'api_key' => config('bulksmsbd.api_key'),
-        ]);
+        try {
+            $response = Http::get('http://bulksmsbd.net/api/getBalanceApi', [
+                'api_key' => config('bulksmsbd.api_key'),
+            ]);
 
-        return $response->body();
+            if ($response->successful()) {
+                $data = $response->json();
+
+                if (isset($data['balance'])) {
+                    return $data['balance'];
+                } else {
+                    Log::error('SMS API response missing balance field.', ['response' => $data]);
+                    return 0;
+                }
+            } else {
+                Log::error('Failed to fetch SMS balance.', ['status' => $response->status(), 'body' => $response->body()]);
+                return 0;
+            }
+        } catch (Exception $e) {
+            Log::error('Exception while fetching SMS balance: ' . $e->getMessage());
+            return 0;
+        }
     }
 }

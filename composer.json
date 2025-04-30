@@ -14,7 +14,9 @@
     },
     "extra": {
         "laravel": {
-            "providers": [],
+            "providers": [
+                 "Bigraja\\BulkSmsBD\\BulkSmsBDServiceProvider"
+            ],
             "aliases": {
                 "BulkSmsBD": "Bigraja\\BulkSmsBD\\Facades\\BulkSmsBD"
             }

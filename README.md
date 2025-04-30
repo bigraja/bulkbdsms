@@ -8,6 +8,12 @@ Send SMS via bulksmsbd.net in Laravel using Notification system or Facade.
 composer require bigraja/bulksmsbd
 ```
 
+## Publish Config File
+
+```bash
+php artisan vendor:publish --provider="Bigraja\BulkSmsBD\BulkSmsBDServiceProvider" --tag="bulksmsbd-config"
+```
+
 ## Configuration
 
 Add to `.env`:
